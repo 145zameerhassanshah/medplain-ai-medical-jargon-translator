@@ -1,0 +1,361 @@
+[
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationError",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "RateLimitError",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "APIConnectionError",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "APITimeoutError",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "BadRequestError",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "OPENROUTER_API_KEY",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "OPENROUTER_BASE_URL",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_MODEL",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "APP_NAME",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "APP_TAGLINE",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "OPENROUTER_API_KEY",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "SUPPORTED_LANGUAGES",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "READING_LEVELS",
+        "importPath": "config",
+        "description": "config",
+        "isExtraImport": true,
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "build_system_prompt",
+        "importPath": "prompts",
+        "description": "prompts",
+        "isExtraImport": true,
+        "detail": "prompts",
+        "documentation": {}
+    },
+    {
+        "label": "build_system_prompt",
+        "importPath": "prompts",
+        "description": "prompts",
+        "isExtraImport": true,
+        "detail": "prompts",
+        "documentation": {}
+    },
+    {
+        "label": "translate_clinical_note",
+        "importPath": "services.llm_service",
+        "description": "services.llm_service",
+        "isExtraImport": true,
+        "detail": "services.llm_service",
+        "documentation": {}
+    },
+    {
+        "label": "translate_clinical_note",
+        "importPath": "services.llm_service",
+        "description": "services.llm_service",
+        "isExtraImport": true,
+        "detail": "services.llm_service",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "get_client",
+        "kind": 2,
+        "importPath": "services.llm_service",
+        "description": "services.llm_service",
+        "peekOfCode": "def get_client():\n    \"\"\"\n    Create and return an authenticated OpenRouter client.\n    \"\"\"\n    if not OPENROUTER_API_KEY:\n        raise ValueError(\n            \"OPENROUTER_API_KEY is missing. \"\n            \"Add it to the .env file.\"\n        )\n    return OpenAI(",
+        "detail": "services.llm_service",
+        "documentation": {}
+    },
+    {
+        "label": "translate_clinical_note",
+        "kind": 2,
+        "importPath": "services.llm_service",
+        "description": "services.llm_service",
+        "peekOfCode": "def translate_clinical_note(\n    system_prompt: str,\n    clinical_note: str,\n    model: str = DEFAULT_MODEL,\n    max_tokens: int = 800,\n    max_retries: int = 3,\n) -> str:\n    \"\"\"\n    Send a clinical note to OpenRouter and return\n    a patient-friendly plain-language explanation.",
+        "detail": "services.llm_service",
+        "documentation": {}
+    },
+    {
+        "label": "clinical_note",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "clinical_note = st.text_area(\n    \"Clinical Note Input\",\n    value=st.session_state.clinical_note,\n    height=280,\n    placeholder=(\n        \"Example:\\n\\n\"\n        \"Pt presents with SOB x 2 days. \"\n        \"CXR demonstrates RLL infiltrate. \"\n        \"BP 150/95 mmHg. \"\n        \"Possible lower respiratory tract infection.\"",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "character_count",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "character_count = len(clinical_note)\nword_count = len(clinical_note.split())\ninfo_left, info_right = st.columns(2)\nwith info_left:\n    st.caption(f\"{word_count} words\")\nwith info_right:\n    st.caption(f\"{character_count} characters\")\n# ---------------------------------------------------------\n# ACTION BUTTONS\n# ---------------------------------------------------------",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "word_count",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "word_count = len(clinical_note.split())\ninfo_left, info_right = st.columns(2)\nwith info_left:\n    st.caption(f\"{word_count} words\")\nwith info_right:\n    st.caption(f\"{character_count} characters\")\n# ---------------------------------------------------------\n# ACTION BUTTONS\n# ---------------------------------------------------------\nbutton_translate, button_example, button_clear, spacer = st.columns(",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "APP_NAME",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "APP_NAME = \"MedPlain AI\"\nAPP_TAGLINE = \"Clinical language made clear\"\nOPENROUTER_API_KEY = os.getenv(\n    \"OPENROUTER_API_KEY\"\n)\nOPENROUTER_BASE_URL = \"https://openrouter.ai/api/v1\"\nDEFAULT_MODEL = \"nvidia/nemotron-3-ultra:free\"\nSUPPORTED_LANGUAGES = [\n    \"English\",\n    \"Urdu\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "APP_TAGLINE",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "APP_TAGLINE = \"Clinical language made clear\"\nOPENROUTER_API_KEY = os.getenv(\n    \"OPENROUTER_API_KEY\"\n)\nOPENROUTER_BASE_URL = \"https://openrouter.ai/api/v1\"\nDEFAULT_MODEL = \"nvidia/nemotron-3-ultra:free\"\nSUPPORTED_LANGUAGES = [\n    \"English\",\n    \"Urdu\",\n    \"Roman Urdu\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "OPENROUTER_API_KEY",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "OPENROUTER_API_KEY = os.getenv(\n    \"OPENROUTER_API_KEY\"\n)\nOPENROUTER_BASE_URL = \"https://openrouter.ai/api/v1\"\nDEFAULT_MODEL = \"nvidia/nemotron-3-ultra:free\"\nSUPPORTED_LANGUAGES = [\n    \"English\",\n    \"Urdu\",\n    \"Roman Urdu\",\n    \"Arabic\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "OPENROUTER_BASE_URL",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "OPENROUTER_BASE_URL = \"https://openrouter.ai/api/v1\"\nDEFAULT_MODEL = \"nvidia/nemotron-3-ultra:free\"\nSUPPORTED_LANGUAGES = [\n    \"English\",\n    \"Urdu\",\n    \"Roman Urdu\",\n    \"Arabic\",\n]\nREADING_LEVELS = [\n    \"Simple\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_MODEL",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "DEFAULT_MODEL = \"nvidia/nemotron-3-ultra:free\"\nSUPPORTED_LANGUAGES = [\n    \"English\",\n    \"Urdu\",\n    \"Roman Urdu\",\n    \"Arabic\",\n]\nREADING_LEVELS = [\n    \"Simple\",\n    \"Standard\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "SUPPORTED_LANGUAGES",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "SUPPORTED_LANGUAGES = [\n    \"English\",\n    \"Urdu\",\n    \"Roman Urdu\",\n    \"Arabic\",\n]\nREADING_LEVELS = [\n    \"Simple\",\n    \"Standard\",\n    \"Detailed\",",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "READING_LEVELS",
+        "kind": 5,
+        "importPath": "config",
+        "description": "config",
+        "peekOfCode": "READING_LEVELS = [\n    \"Simple\",\n    \"Standard\",\n    \"Detailed\",\n]",
+        "detail": "config",
+        "documentation": {}
+    },
+    {
+        "label": "build_system_prompt",
+        "kind": 2,
+        "importPath": "prompts",
+        "description": "prompts",
+        "peekOfCode": "def build_system_prompt(\n    selected_language: str,\n    reading_level: str\n) -> str:\n    \"\"\"\n    Build the final system prompt using the selected language\n    and reading level.\n    \"\"\"\n    reading_instruction = READING_LEVEL_INSTRUCTIONS.get(\n        reading_level,",
+        "detail": "prompts",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "prompts",
+        "description": "prompts",
+        "peekOfCode": "BASE_SYSTEM_PROMPT = \"\"\"\nYou are MedPlain AI, a medical plain-language communication assistant.\nPURPOSE:\nYour purpose is to help patients understand clinical notes by rewriting\nmedical terminology into clear, respectful, patient-friendly language.\nAUDIENCE:\nThe intended audience is a patient or family member who may not have\nmedical training.\nCORE TASK:\nRewrite the supplied clinical note into plain language while preserving",
+        "detail": "prompts",
+        "documentation": {}
+    },
+    {
+        "label": "READING_LEVEL_INSTRUCTIONS",
+        "kind": 5,
+        "importPath": "prompts",
+        "description": "prompts",
+        "peekOfCode": "READING_LEVEL_INSTRUCTIONS = {\n    \"Simple\": \"\"\"\nREADING LEVEL:\nUse very simple everyday language.\nUse short sentences.\nAvoid technical terminology whenever possible.\nExplain only the information needed to understand the clinical note.\n\"\"\",\n    \"Standard\": \"\"\"\nREADING LEVEL:",
+        "detail": "prompts",
+        "documentation": {}
+    },
+    {
+        "label": "selected_language",
+        "kind": 5,
+        "importPath": "test_api",
+        "description": "test_api",
+        "peekOfCode": "selected_language = \"English\"\nreading_level = \"Standard\"\nsystem_prompt = build_system_prompt(\n    selected_language,\n    reading_level,\n)\nclinical_note = \"\"\"\nPt presents with SOB x 2 days.\nCXR shows RLL infiltrate.\nBP 150/95 mmHg.",
+        "detail": "test_api",
+        "documentation": {}
+    },
+    {
+        "label": "reading_level",
+        "kind": 5,
+        "importPath": "test_api",
+        "description": "test_api",
+        "peekOfCode": "reading_level = \"Standard\"\nsystem_prompt = build_system_prompt(\n    selected_language,\n    reading_level,\n)\nclinical_note = \"\"\"\nPt presents with SOB x 2 days.\nCXR shows RLL infiltrate.\nBP 150/95 mmHg.\nPossible lower respiratory tract infection.",
+        "detail": "test_api",
+        "documentation": {}
+    },
+    {
+        "label": "system_prompt",
+        "kind": 5,
+        "importPath": "test_api",
+        "description": "test_api",
+        "peekOfCode": "system_prompt = build_system_prompt(\n    selected_language,\n    reading_level,\n)\nclinical_note = \"\"\"\nPt presents with SOB x 2 days.\nCXR shows RLL infiltrate.\nBP 150/95 mmHg.\nPossible lower respiratory tract infection.\n\"\"\"",
+        "detail": "test_api",
+        "documentation": {}
+    },
+    {
+        "label": "clinical_note",
+        "kind": 5,
+        "importPath": "test_api",
+        "description": "test_api",
+        "peekOfCode": "clinical_note = \"\"\"\nPt presents with SOB x 2 days.\nCXR shows RLL infiltrate.\nBP 150/95 mmHg.\nPossible lower respiratory tract infection.\n\"\"\"\nresult = translate_clinical_note(\n    system_prompt=system_prompt,\n    clinical_note=clinical_note,\n)",
+        "detail": "test_api",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "test_api",
+        "description": "test_api",
+        "peekOfCode": "result = translate_clinical_note(\n    system_prompt=system_prompt,\n    clinical_note=clinical_note,\n)\nprint(\"\\nORIGINAL CLINICAL NOTE:\\n\")\nprint(clinical_note)\nprint(\"\\nPATIENT-FRIENDLY TRANSLATION:\\n\")\nprint(result)",
+        "detail": "test_api",
+        "documentation": {}
+    }
+]
